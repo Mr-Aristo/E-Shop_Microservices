@@ -1,5 +1,4 @@
-﻿
-using MediatR;
+﻿using MediatR;
 
 namespace BuildingBlock.CQRS.Handlers;
 

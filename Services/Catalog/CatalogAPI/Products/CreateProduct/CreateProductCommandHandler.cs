@@ -1,24 +1,30 @@
-﻿using MediatR;
-
-namespace CatalogAPI.Products.CreateProduct;
-
-/*
- IRequest<T>
- IRequestHandler<TCommand,TResponse>
-*/
-
-//CQRS (MediatR) Command
-public record CreateProductCommand(Guid Id, string Name, List<string> Category, string Description, string ImageFile, decimal Price) : IRequest<CreateProductResult>;
-
-public record CreateProductResult(Guid Id);
+﻿namespace CatalogAPI.Products.CreateProduct;
 
 
-internal class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, CreateProductResult>
+
+//IDocumentSession is member of MartenLibrary
+
+internal class CreateProductCommandHandler (IDocumentSession session)
+    : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
 
-    public Task<CreateProductResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
     {
 
-        throw new NotImplementedException();
+        var product = new Product
+        {
+            Name = command.Name,
+            Category = command.Category,
+            Description = command.Description,
+            ImageFile = command.ImageFile,
+            Price = command.Price
+        };
+
+
+        //Save to database;
+        session.Store(product);
+        await session.SaveChangesAsync(cancellationToken);
+
+        return new CreateProductResult(product.Id);
     }
 }

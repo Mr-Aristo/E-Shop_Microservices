@@ -2,6 +2,10 @@
 
 namespace BuildingBlock.CQRS.Handlers;
 
+/*
+ IRequest<T>
+ IRequestHandler<TCommand,TResponse>
+*/
 public interface ICommandHandler<in TCommand> : ICommandHandler<TCommand, Unit>
     where TCommand : ICommand<Unit>
 { }
