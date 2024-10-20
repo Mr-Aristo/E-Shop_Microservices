@@ -16,7 +16,7 @@ public class CreateProductEndpoint : ICarterModule
             var result = await sender.Send(command);
             var response = result.Adapt<CreateProductResponse>();
 
-            return Results.Created($"/product/{response.Id}", response);
+            return Results.Created($"/products/{response.Id}", response);
         })
             //CarterExtentions for endpoint
             .WithName("CreateProduct")
