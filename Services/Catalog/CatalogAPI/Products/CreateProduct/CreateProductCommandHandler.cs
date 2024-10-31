@@ -22,6 +22,7 @@ internal class CreateProductCommandHandler (IDocumentSession session)
 
 
         //Save to database;
+        // Marten lib.
         session.Store(product);
         await session.SaveChangesAsync(cancellationToken);
 
