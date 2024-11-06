@@ -1,5 +1,4 @@
-﻿using CatalogAPI.Products.CreateProduct.Models.Endpoint;
-using CatalogAPI.Products.CreateProduct.Models.Handler;
+﻿
 
 namespace CatalogAPI.Products.CreateProduct;
 
