@@ -1,5 +1,10 @@
 ﻿namespace CatalogAPI.Exceptions;
 
-public class ProductNotFoundException
+public class ProductNotFoundException :Exception
 {
+    public ProductNotFoundException(): base ("Product not found!")
+    {
+        
+    }
+
 }
