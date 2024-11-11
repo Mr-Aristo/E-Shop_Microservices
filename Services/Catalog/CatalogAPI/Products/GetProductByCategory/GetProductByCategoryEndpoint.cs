@@ -1,6 +1,5 @@
 ﻿
 using CatalogAPI.Products.GetProducts;
-using NetTopologySuite.Utilities;
 
 namespace CatalogAPI.Products.GetProductByCategory;
 
@@ -22,3 +21,4 @@ public class GetProductByCategoryEndpoint : ICarterModule
             .WithDescription("Get Product By Category");
     }
 }
+
