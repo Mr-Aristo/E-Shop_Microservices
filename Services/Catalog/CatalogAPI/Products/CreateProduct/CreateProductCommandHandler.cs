@@ -24,7 +24,7 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 #endregion
 
 //IDocumentSession is member of MartenLibrary
-internal class CreateProductCommandHandler (IDocumentSession session , IValidator<CreateProductCommand> validator)
+internal class CreateProductCommandHandler (IDocumentSession session)
     : ICommandHandler<CreateProductCommand, CreateProductResult>
 {
 
