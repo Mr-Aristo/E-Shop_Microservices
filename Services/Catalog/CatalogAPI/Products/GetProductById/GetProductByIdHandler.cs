@@ -1,6 +1,4 @@
-﻿
-
-namespace CatalogAPI.Products.GetProductById;
+﻿namespace CatalogAPI.Products.GetProductById;
 
 public record GetProductByIdQuery(Guid id) : IQuery<GetProdcutByIdResult>;
 
