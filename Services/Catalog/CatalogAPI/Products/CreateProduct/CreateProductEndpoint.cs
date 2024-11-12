@@ -2,6 +2,11 @@
 
 namespace CatalogAPI.Products.CreateProduct;
 
+
+public record CreateProductRequest(Guid Id,string Name,List<string> Category,string Description,string ImageFile,decimal Price);
+public record CreateProductResponse(Guid Id);
+
+
 //Carter library installed for endpoints.
 public class CreateProductEndpoint : ICarterModule
 {

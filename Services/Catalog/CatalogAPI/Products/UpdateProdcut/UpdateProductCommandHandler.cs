@@ -1,11 +1,16 @@
 ﻿
-using CatalogAPI.Models.Entities;
-using JasperFx.CodeGeneration.Frames;
+using FluentValidation;
 
 namespace CatalogAPI.Products.UpdateProdcut;
+
+#region Command-Result Records
 public record UpdateProductCommand(Guid Id, string Name, List<string> Category, string Description, string ImageFile, decimal Price)
-    : ICommand<UpdateProductResult>;
-public record UpdateProductResult(bool IsSuccess);
+: ICommand<UpdateProductResult>;
+public record UpdateProductResult(bool IsSuccess); 
+#endregion
+
+
+
 
 public class UpdateProductCommandHandler(IDocumentSession session) : ICommandHandler<UpdateProductCommand, UpdateProductResult>
 {

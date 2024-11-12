@@ -1,7 +1,4 @@
-﻿
-using CatalogAPI.Products.CreateProduct.Models.Endpoint;
-
-namespace CatalogAPI.Products.GetProducts;
+﻿namespace CatalogAPI.Products.GetProducts;
 
 //public record GetProductsRequest(int? PageNumber = 1, int? PageSize = 10);
 public record GetProductsRequest();
