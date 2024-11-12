@@ -9,7 +9,7 @@ public class UpdateProductEndpoint : ICarterModule
         app.MapPut("/product-update", 
             async (UpdateProductRequest request, ISender sender) =>
         {
-            var command = sender.Adapt<UpdateProductCommand>();
+            var command = request.Adapt<UpdateProductCommand>();
 
             var result = await sender.Send(command);
 
