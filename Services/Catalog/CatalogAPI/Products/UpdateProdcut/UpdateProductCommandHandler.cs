@@ -31,7 +31,7 @@ public class UpdateProductCommandHandler(IDocumentSession session) : ICommandHan
 
         if (products == null)
         {
-            throw new ArgumentException("Product is null");
+            throw new ProductNotFoundException(command.Id);
         }
 
         products.Id = command.Id;
