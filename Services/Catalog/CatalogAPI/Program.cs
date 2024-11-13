@@ -1,4 +1,5 @@
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Add services  to the container.
@@ -28,10 +29,18 @@ if (builder.Environment.IsDevelopment())
 
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
+//HealthCheck
+builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("PostgreDataBase")!);
+
 var app = builder.Build();
 // Configure the HTTP request pipline.
 
 app.MapCarter();
+
+app.UseHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{   //HealthCheck with psql
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.UseExceptionHandler(options => { });
 

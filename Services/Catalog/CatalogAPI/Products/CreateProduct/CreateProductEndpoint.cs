@@ -12,7 +12,7 @@ public class CreateProductEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapPost("/products",
+        app.MapPost("/product-create",
             async (CreateProductRequest request, ISender sender) =>//ISender from mediator to send command
         {
             //mapster for mapping and to other class. //CreateProductCommand From handler
