@@ -11,3 +11,4 @@ global using FluentValidation; //Installed in Building Blocks
 global using BuildingBlock.Behaviors;
 global using Catalog.API.Data;
 global using BuildingBlocks.Exceptions.Handler;
+global using HealthChecks.UI.Client;
