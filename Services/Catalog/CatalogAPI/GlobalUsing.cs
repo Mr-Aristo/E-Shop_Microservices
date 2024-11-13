@@ -7,5 +7,7 @@ global using BuildingBlock.CQRS;
 global using BuildingBlock.CQRS.Handlers;
 global using CatalogAPI.Models.Entities;
 global using CatalogAPI.Exceptions;
-global using Marten.Linq.QueryHandlers;
 global using FluentValidation; //Installed in Building Blocks
+global using BuildingBlock.Behaviors;
+global using Catalog.API.Data;
+global using BuildingBlocks.Exceptions.Handler;

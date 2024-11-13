@@ -3,9 +3,7 @@ using FluentValidation;
 using MediatR;
 
 namespace BuildingBlocks.Behaviors;
-public class ValidationBehavior<TRequest, TResponse>
-     (IEnumerable<IValidator<TRequest>> validators)
-    : IPipelineBehavior<TRequest, TResponse>
+public class ValidationBehavior<TRequest, TResponse>(IEnumerable<IValidator<TRequest>> validators) : IPipelineBehavior<TRequest, TResponse> //IpipelineBehavior form MediatoR
     where TRequest : ICommand<TResponse>
 {
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)

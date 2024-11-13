@@ -1,7 +1,6 @@
 
 
-using BuildingBlock.Behaviors;
-using Catalog.API.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +15,7 @@ builder.Services.AddMediatR(config =>
 {   
     config.RegisterServicesFromAssembly(assembly);
     //Registration of Pipeline behavior
-    config.AddOpenBehavior(typeof(ValidationBehavior<,>));//<,> that mean generic
+    config.AddOpenBehavior(typeof(ValidationBehavior<,>));//<,> that means generic
     config.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
 
@@ -31,14 +30,14 @@ builder.Services.AddMarten(options =>
 if (builder.Environment.IsDevelopment())
     builder.Services.InitializeMartenWith<CatalogInitialData>();
 
-
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 var app = builder.Build();
 // Configure the HTTP request pipline.
 
-app.UseExceptionHandler();
 app.MapCarter();
 
+app.UseExceptionHandler(options => { });
 
 app.Run();
  
