@@ -1,17 +1,18 @@
 ﻿
+using Marten.Pagination;
+
 namespace CatalogAPI.Products.GetProductByCategory;
-
-public record GetProductByCategoryQuery(string Category): IQuery<GetProductByCategoryResult>;
-public record GetProductByCategoryResult(IEnumerable<Product> Products);
-internal class GetProductByCategoryQueryHandler(IDocumentSession session, ILogger<GetProductByCategoryQueryHandler> log) :
-    IQueryHandler<GetProductByCategoryQuery, GetProductByCategoryResult>
+public record GetProductsQuery(int? PageNumber = 1, int? PageSize = 10) : IQuery<GetProductsResult>;
+public record GetProductsResult(IEnumerable<Product> Products);
+internal class GetProductByCategoryQueryHandler
+    (IDocumentSession session)
+    : IQueryHandler<GetProductsQuery, GetProductsResult>
 {
-    public async Task<GetProductByCategoryResult> Handle(GetProductByCategoryQuery query, CancellationToken cancellationToken)
+    public async Task<GetProductsResult> Handle(GetProductsQuery query, CancellationToken cancellationToken)
     {
-        log.LogInformation("Get product by category called {@query}",query);
+        var products = await session.Query<Product>()
+            .ToPagedListAsync(query.PageNumber ?? 1, query.PageSize ?? 10, cancellationToken);
 
-        var products = await session.Query<Product>().Where(x=> x.Category.Contains(query.Category)).ToListAsync();    
-
-        return new GetProductByCategoryResult(products);
+        return new GetProductsResult(products);
     }
 }

@@ -8,17 +8,21 @@ public class GetProductByCategoryEndpoint : ICarterModule
 {
     public void AddRoutes(IEndpointRouteBuilder app)
     {
-        app.MapGet("/products-with-category/{Category}", async (string Category , ISender sender) =>
+        app.MapGet("/products", async ([AsParameters] GetProductsRequest request, ISender sender) =>
         {
-            var result = await sender.Send(new GetProductByCategoryQuery(Category)); //from handler 
-            var response = result.Adapt<GetProductByCategoryResponse>();
+            var query = request.Adapt<GetProductsQuery>();
 
-            return response;
-        }).WithName("GetProductByCategory")
-            .Produces<GetProductsResponse>(StatusCodes.Status201Created)
-            .ProducesProblem(StatusCodes.Status400BadRequest)
-            .WithSummary("Get Product By Category")
-            .WithDescription("Get Product By Category");
+            var result = await sender.Send(query);
+
+            var response = result.Adapt<GetProductsResponse>();
+
+            return Results.Ok(response);
+        })
+        .WithName("GetProducts")
+        .Produces<GetProductsResponse>(StatusCodes.Status200OK)
+        .ProducesProblem(StatusCodes.Status400BadRequest)
+        .WithSummary("Get Products")
+        .WithDescription("Get Products");
     }
 }
 

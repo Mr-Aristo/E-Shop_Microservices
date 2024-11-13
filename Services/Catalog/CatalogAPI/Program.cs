@@ -1,10 +1,5 @@
 
-
-
-
 var builder = WebApplication.CreateBuilder(args);
-
-
 
 //Add services  to the container.
 
@@ -27,6 +22,7 @@ builder.Services.AddMarten(options =>
     options.Connection(builder.Configuration.GetConnectionString("PostgreDataBase")!);
 }).UseLightweightSessions();
 
+//Data seeding
 if (builder.Environment.IsDevelopment())
     builder.Services.InitializeMartenWith<CatalogInitialData>();
 
