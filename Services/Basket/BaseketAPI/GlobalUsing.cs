@@ -8,3 +8,6 @@ global using Microsoft.Extensions.Caching.Distributed;
 global using System.Text.Json;
 global using BaseketAPI.Exceptions;
 global using BuildingBlock.CQRS;
+global using BuildingBlock.Behaviors;
+global using BuildingBlocks.Behaviors;
+global using FluentValidation;
