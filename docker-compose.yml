@@ -2,6 +2,9 @@ version: '3.8'
 services:
   catalogdb:
     image: postgres
+  
+  basketdb:
+    image: postgres
 
   catalogapi:
     image: ${DOCKER_REGISTRY-}catalogapi
@@ -11,6 +14,7 @@ services:
 
 volumes:
   postgres_catalog:
+  postgres_basket:
 
 
  
