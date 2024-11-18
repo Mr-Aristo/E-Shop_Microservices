@@ -1,5 +1,4 @@
 ﻿using BuildingBlock.CQRS.Handlers;
-using FluentValidation;
 
 namespace BaseketAPI.Basket.StoreBasket;
 public record StoreBasketCommand(ShoppingCart Cart) : ICommand<StoreBasketResult>;
@@ -12,7 +11,7 @@ public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>
         RuleFor(x => x.Cart.UserName).NotEmpty().WithMessage("UserName is required");
     }
 }
-public class StoreBasketHandler(IBasketRepository repository, /*DiscountProtoService.DiscountProtoServiceClient discountProto*/)
+public class StoreBasketCommandHandler(IBasketRepository repository /*,DiscountProtoService.DiscountProtoServiceClient discountProto*/)
     : ICommandHandler<StoreBasketCommand, StoreBasketResult>
 {
     public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
