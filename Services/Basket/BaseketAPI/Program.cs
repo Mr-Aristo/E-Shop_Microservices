@@ -23,7 +23,7 @@ builder.Services.AddMarten(opts =>
 }).UseLightweightSessions();
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
-//builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();//nuget Scrutor
+//builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();//nuget Scrutor "Decorator pattern"
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 var app = builder.Build();
 
