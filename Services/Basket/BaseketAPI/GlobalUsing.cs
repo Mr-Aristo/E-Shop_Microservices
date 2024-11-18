@@ -11,3 +11,6 @@ global using BuildingBlock.CQRS;
 global using BuildingBlock.Behaviors;
 global using BuildingBlocks.Behaviors;
 global using FluentValidation;
+global using BuildingBlock.CQRS.Handlers;
+global using BaseketAPI.Data;
+global using BuildingBlocks.Exceptions.Handler;
