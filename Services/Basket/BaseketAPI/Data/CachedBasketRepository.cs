@@ -1,7 +1,7 @@
-﻿
+﻿namespace BaseketAPI.Data;
 
-namespace BaseketAPI.Data;
 
+//proxy pattern implemented
 public class CachedBasketRepository
       (IBasketRepository repository, IDistributedCache cache)
     : IBasketRepository
