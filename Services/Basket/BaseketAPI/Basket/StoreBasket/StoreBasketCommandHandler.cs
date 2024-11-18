@@ -1,6 +1,5 @@
-﻿using BuildingBlock.CQRS.Handlers;
+﻿namespace BaseketAPI.Basket.StoreBasket;
 
-namespace BaseketAPI.Basket.StoreBasket;
 public record StoreBasketCommand(ShoppingCart Cart) : ICommand<StoreBasketResult>;
 public record StoreBasketResult(string UserName);
 public class StoreBasketCommandValidator : AbstractValidator<StoreBasketCommand>

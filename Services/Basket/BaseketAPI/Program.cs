@@ -1,5 +1,5 @@
-using BaseketAPI.Data;
-using BuildingBlocks.Exceptions.Handler;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 //Add services to container
@@ -17,13 +17,13 @@ builder.Services.AddMediatR(config =>
 //Data Services
 builder.Services.AddMarten(opts =>
 {
-    opts.Connection(builder.Configuration.GetConnectionString("Database")!);
+    opts.Connection(builder.Configuration.GetConnectionString("PostgreDataBase")!);
     opts.Schema.For<ShoppingCart>().Identity(x => x.UserName);//Identity defines username like id. 
 
 }).UseLightweightSessions();
 
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
-builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();//nuget Scrutor
+//builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();//nuget Scrutor
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 var app = builder.Build();
 
@@ -31,5 +31,6 @@ var app = builder.Build();
 //Configure the HTTP request pipeline.
 
 app.UseExceptionHandler(options => { });
+app.MapCarter();
 
 app.Run();
