@@ -32,6 +32,12 @@ builder.Services.AddStackExchangeRedisCache(options =>
     //options.InstanceName = "Basket";
 });
 
+//HealthCheck
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("PostgreDataBase")!)
+    .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
+
+
 var app = builder.Build();
 
 
@@ -39,5 +45,6 @@ var app = builder.Build();
 
 app.UseExceptionHandler(options => { });
 app.MapCarter();
+app.UseHealthChecks("/health");
 
 app.Run();
