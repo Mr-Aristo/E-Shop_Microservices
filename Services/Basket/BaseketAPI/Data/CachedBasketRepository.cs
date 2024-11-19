@@ -1,4 +1,6 @@
-﻿namespace BaseketAPI.Data;
+﻿using Microsoft.Extensions.Caching.Distributed;
+
+namespace BaseketAPI.Data;
 
 
 //proxy pattern implemented
