@@ -4,7 +4,6 @@ global using MediatR;
 global using Mapster;
 global using BaseketAPI.Data.Abstracts;
 global using BaseketAPI.Models;
-global using Microsoft.Extensions.Caching.Distributed;
 global using System.Text.Json;
 global using BaseketAPI.Exceptions;
 global using BuildingBlock.CQRS;
