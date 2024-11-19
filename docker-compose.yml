@@ -15,9 +15,16 @@ services:
       context: .
       dockerfile: Services/Catalog/CatalogAPI/Dockerfile
 
+  baseketapi:
+    image: ${DOCKER_REGISTRY-}baseketapi
+    build:
+      context: .
+      dockerfile: Services/Basket/BaseketAPI/Dockerfile
+
 volumes:
   postgres_catalog:
   postgres_basket:
 
 
  
+
