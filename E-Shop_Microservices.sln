@@ -42,6 +42,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseketAPI", "Services\Bask
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlockMessaging", "BuildingBlocks\BuildingBlockMessaging\BuildingBlockMessaging.csproj", "{1540B652-B3BB-4BE5-A605-E6B1EA81FAF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiscountGrpc", "Services\Discount\DiscountGrpc\DiscountGrpc.csproj", "{21C21016-BE86-452F-930A-3D1D29142776}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{1540B652-B3BB-4BE5-A605-E6B1EA81FAF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1540B652-B3BB-4BE5-A605-E6B1EA81FAF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1540B652-B3BB-4BE5-A605-E6B1EA81FAF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C21016-BE86-452F-930A-3D1D29142776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C21016-BE86-452F-930A-3D1D29142776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C21016-BE86-452F-930A-3D1D29142776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C21016-BE86-452F-930A-3D1D29142776}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{7EE64F46-0CE7-43AA-B4A8-8A306DAD1874} = {C69A3B0A-4030-4244-B246-AD55B188D8FB}
 		{EB22B295-1B5C-4D25-873E-E46213DBB55C} = {141B8211-D535-4C5E-8B65-DA0CE62D9DE7}
 		{1540B652-B3BB-4BE5-A605-E6B1EA81FAF4} = {C69A3B0A-4030-4244-B246-AD55B188D8FB}
+		{21C21016-BE86-452F-930A-3D1D29142776} = {2D21D5B7-C2F9-4E24-8B7D-28F702721C5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {484AAD66-012B-49FD-9AC9-F011976E1923}
