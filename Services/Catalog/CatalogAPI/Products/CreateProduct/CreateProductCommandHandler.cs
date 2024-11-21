@@ -1,6 +1,4 @@
-﻿
-
-namespace CatalogAPI.Products.CreateProduct;
+﻿namespace CatalogAPI.Products.CreateProduct;
 
 #region Command-Result Records
 
