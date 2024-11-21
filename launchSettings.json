@@ -5,7 +5,8 @@
       "commandVersion": "1.0",
       "serviceActions": {
         "catalogapi": "startdebugging",
-        "baseketapi": "StartDebugging"
+        "baseketapi": "StartDebugging",
+        "discountgrpc": "StartDebugging"
       }
     }
   }
