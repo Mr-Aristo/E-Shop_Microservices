@@ -1,7 +1,8 @@
 
-
+using DiscountGrpc.Protos;
 
 var builder = WebApplication.CreateBuilder(args);
+
 //Add services to container
 
 var assembly = typeof(Program).Assembly;
@@ -37,9 +38,14 @@ builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("PostgreDataBase")!)
     .AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
+//Grpc Services
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(options =>
+{
+    options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);//appsettings.json
+});
+
 
 var app = builder.Build();
-
 
 //Configure the HTTP request pipeline.
 
