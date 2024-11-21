@@ -6,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+
+//sqlite gomulu bir db oldugundan uygulamanin root kisminda  olusur.
 builder.Services.AddDbContext<DiscountContext>(opts =>
         opts.UseSqlite(builder.Configuration.GetConnectionString("Database")));
 
