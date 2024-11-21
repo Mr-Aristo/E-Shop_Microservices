@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Distributed;
 
-namespace BaseketAPI.Data;
+namespace BasketAPI.Data;
 
 
 //proxy pattern implemented

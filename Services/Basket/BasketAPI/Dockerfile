@@ -12,20 +12,20 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Services/Basket/BaseketAPI/BaseketAPI.csproj", "Services/Basket/BaseketAPI/"]
+COPY ["Services/Basket/BasketAPI/BasketAPI.csproj", "Services/Basket/BasketAPI/"]
 COPY ["BuildingBlocks/BuildingBlock/BuildingBlock.csproj", "BuildingBlocks/BuildingBlock/"]
-RUN dotnet restore "./Services/Basket/BaseketAPI/BaseketAPI.csproj"
+RUN dotnet restore "./Services/Basket/BasketAPI/BasketAPI.csproj"
 COPY . .
-WORKDIR "/src/Services/Basket/BaseketAPI"
-RUN dotnet build "./BaseketAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/Services/Basket/BasketAPI"
+RUN dotnet build "./BasketAPI.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./BaseketAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./BasketAPI.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "BaseketAPI.dll"]
+ENTRYPOINT ["dotnet", "BasketAPI.dll"]

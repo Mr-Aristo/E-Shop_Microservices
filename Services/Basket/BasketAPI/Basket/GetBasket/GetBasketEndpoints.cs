@@ -2,7 +2,7 @@
 using Mapster;
 using MediatR;
 
-namespace BaseketAPI.Basket.GetBasket;
+namespace BasketAPI.Basket.GetBasket;
 
 public record GetBasketResponse(ShoppingCart Cart);
 

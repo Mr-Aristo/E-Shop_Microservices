@@ -1,6 +1,6 @@
 ﻿using DiscountGrpc.Protos;
 
-namespace BaseketAPI.Basket.StoreBasket;
+namespace BasketAPI.Basket.StoreBasket;
 
 public record StoreBasketCommand(ShoppingCart Cart) : ICommand<StoreBasketResult>;
 public record StoreBasketResult(string UserName);

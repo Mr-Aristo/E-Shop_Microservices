@@ -1,6 +1,6 @@
-﻿using BaseketAPI.Models;
+﻿using BasketAPI.Models;
 
-namespace BaseketAPI.Data.Abstracts;
+namespace BasketAPI.Data.Abstracts;
 
 public interface IBasketRepository
 {

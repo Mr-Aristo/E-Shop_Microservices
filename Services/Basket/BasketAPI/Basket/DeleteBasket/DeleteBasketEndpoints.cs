@@ -1,7 +1,7 @@
 ﻿
 
 
-namespace BaseketAPI.Basket.DeleteBasket;
+namespace BasketAPI.Basket.DeleteBasket;
 
 public record DeleteBasketResponse(bool IsSuccess);
 public class DeleteBasketEndpoints : ICarterModule

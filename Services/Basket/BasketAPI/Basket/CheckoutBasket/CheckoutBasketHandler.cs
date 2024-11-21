@@ -1,8 +1,8 @@
-﻿using BaseketAPI.DTOs;
+﻿using BasketAPI.DTOs;
 using BuildingBlock.CQRS.Handlers;
 using FluentValidation;
 
-namespace BaseketAPI.Basket.CheckoutBasket;
+namespace BasketAPI.Basket.CheckoutBasket;
 
 public record CheckoutBasketCommand(BasketCheckoutDto BasketCheckoutDto) : ICommand<CheckoutBasketResult>;
 public record CheckoutBasketResult(bool IsSuccess);

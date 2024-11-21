@@ -15,11 +15,11 @@ services:
       context: .
       dockerfile: Services/Catalog/CatalogAPI/Dockerfile
 
-  baseketapi:
-    image: ${DOCKER_REGISTRY-}baseketapi
+  basketapi:
+    image: ${DOCKER_REGISTRY-}basketapi
     build:
       context: .
-      dockerfile: Services/Basket/BaseketAPI/Dockerfile
+      dockerfile: Services/Basket/BasketAPI/Dockerfile
 
   discountgrpc:
     image: ${DOCKER_REGISTRY-}discountgrpc
