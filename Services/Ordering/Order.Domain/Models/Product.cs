@@ -1,6 +1,6 @@
 ﻿namespace Order.Domain.Models;
 
-internal class Product
+public class Product
 {
 
 }
