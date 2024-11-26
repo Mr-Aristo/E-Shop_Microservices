@@ -1,0 +1,10 @@
+﻿global using Order.Domain.Models;
+global using Order.Domain.ValueObjects;
+global using BuildingBlocks.Behaviors;
+global using Order.Application.Data;
+global using Order.Application.Dtos;
+global using Order.Application.Exceptions;
+global using MediatR;
+global using Microsoft.Extensions.Logging;
+global using Order.Domain.Events;
+global using Microsoft.EntityFrameworkCore;
