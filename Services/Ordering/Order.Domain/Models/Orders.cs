@@ -1,5 +1,5 @@
 ﻿namespace Order.Domain.Models;
-
+//Order is rich-domain model
 public class Orders : Aggregate<OrderId>
 {
     private readonly List<OrderItem> _orderItems = new();

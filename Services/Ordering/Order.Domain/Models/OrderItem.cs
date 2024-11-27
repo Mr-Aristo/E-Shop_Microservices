@@ -2,6 +2,7 @@
 
 public class OrderItem : Entity<OrderItemId>
 {
+    //Strongly typed ID OrderId, ProductId
     internal OrderItem(OrderId orderId, ProductId productId, int quantity, decimal price)
     {
         Id = OrderItemId.Of(Guid.NewGuid());

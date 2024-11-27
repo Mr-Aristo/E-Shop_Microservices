@@ -4,6 +4,7 @@ namespace Order.Domain.ValueObjects;
 
 public record OrderId
 {
+    //Strongly types value id
     public Guid Value { get; }
     private OrderId(Guid value) => Value = value;
     public static OrderId Of(Guid value)
@@ -17,3 +18,5 @@ public record OrderId
         return new OrderId(value);
     }
 }
+
+//Strongly typed Ids reduces mistakes and mistunderstading and decreses readabilty of the code.
