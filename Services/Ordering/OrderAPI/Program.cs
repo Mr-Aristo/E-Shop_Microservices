@@ -7,10 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddApplicationServices(builder.Configuration)
     .AddIfrasturctureService(builder.Configuration)
-    .AddAPIServices();
+    .AddApiServices(builder.Configuration);
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.UseApiServices();
+
+if (app.Environment.IsDevelopment())
+{
+//    await app.InitialiseDatabaseAsync();
+}
+
 
 app.Run();

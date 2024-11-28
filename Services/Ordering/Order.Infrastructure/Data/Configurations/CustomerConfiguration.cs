@@ -9,8 +9,7 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
         builder.Property(c => c.Id)
             .HasConversion(
                     customerId => customerId.Value,
-                    dbId => CustomerId.Of(dbId)
-                );
+                    dbId => CustomerId.Of(dbId));
 
         builder.Property(c => c.Name).HasMaxLength(100).IsRequired();
 
@@ -19,3 +18,7 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
         builder.HasIndex(c => c.Email).IsUnique();
     }
 }
+/*
+HasMany/WithOne - one-to-many
+HasOne/WithMany - many-to-one
+*/
