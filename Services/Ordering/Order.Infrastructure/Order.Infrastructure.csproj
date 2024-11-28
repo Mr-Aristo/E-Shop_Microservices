@@ -22,9 +22,4 @@
     <ProjectReference Include="..\Order.Application\Order.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Data\Extentions\" />
-    <Folder Include="Data\Interceptors\" />
-  </ItemGroup>
-
 </Project>
