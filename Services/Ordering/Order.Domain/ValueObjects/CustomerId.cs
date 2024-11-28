@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Order.Domain.Exceptions;
+﻿using Order.Domain.Exceptions;
 
 namespace Order.Domain.ValueObjects;
 

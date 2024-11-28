@@ -63,3 +63,7 @@ public class Orders : Aggregate<OrderId>
         }
     }
 }
+/*
+  Private set amacin Order sinifinin ozelliklerinin Order sininfinin disinda
+  bir degisiklige ugramaasinin onlemektir.   
+*/

@@ -40,3 +40,4 @@ public record Address
        Doğrudan new ile oluşturmayı engelleyip nesne yaratmayı daha güvenli hale getirmek.
      */
 }
+ 
