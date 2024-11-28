@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Order.Infrastructure.Data.Configurations
+﻿namespace Order.Infrastructure.Data.Configurations
 {
-    internal class OrderConfiguration
+    public class OrderConfiguration
     {
     }
 }
