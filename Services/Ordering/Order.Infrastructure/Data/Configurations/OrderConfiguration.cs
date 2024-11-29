@@ -1,7 +1,4 @@
-﻿
-using Order.Domain.Enums;
-
-namespace Order.Infrastructure.Data.Configurations;
+﻿namespace Order.Infrastructure.Data.Configurations;
 
 public class OrderConfiguration : IEntityTypeConfiguration<Orders>
 {

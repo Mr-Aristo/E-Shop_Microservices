@@ -25,7 +25,7 @@ namespace Order.Application
             });
 
             //services.AddFeatureManagement();
-            //services.AddMessageBroker(config, Assembly.GetExecutingAssembly());
+            services.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
 
             return services;
         }

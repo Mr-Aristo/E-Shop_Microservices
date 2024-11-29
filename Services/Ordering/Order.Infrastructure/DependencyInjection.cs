@@ -1,13 +1,23 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-
+﻿
 namespace Order.Infrastructure;
 
 public static class DependencyInjection
 {
     public static IServiceCollection AddIfrasturctureService(this IServiceCollection services , IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("DataBase");
+        var connectionString = configuration.GetConnectionString("Database");
+        // Add services to the container.
+        //services.AddScoped<ISaveChangesInterceptor, AuditableEntityInterceptor>();
+        //services.AddScoped<ISaveChangesInterceptor, DispatchDomainEventsInterceptor>();
+
+        services.AddDbContext<ApplicationDbContext>((sp, options) =>
+        {
+            //options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
+            options.UseSqlServer(connectionString);
+        });
+
+       // services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
 
         return services;
     }
