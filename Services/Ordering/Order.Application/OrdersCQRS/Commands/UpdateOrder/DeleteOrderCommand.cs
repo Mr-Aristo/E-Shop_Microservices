@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Order.Application.Orders.EventHandlers.Integration;
+namespace Order.Application.OrdersCQRS.Commands.UpdateOrder;
 
-public class BasketCheckoutEventHandler
+public class DeleteOrderCommand
 {
 }

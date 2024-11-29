@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Order.Application.Orders.Commands.UpdateOrder;
+namespace Order.Application.OrdersCQRS.EventHandlers.Domain;
 
-public class DeleteOrderCommand
+public class OrderUpdatedEventHandler
 {
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Order.Application.Orders.Commands.CreateOrder;
+namespace Order.Application.OrdersCQRS.Commands.CreateOrder;
 
 public class CreateOrderCommand
 {
