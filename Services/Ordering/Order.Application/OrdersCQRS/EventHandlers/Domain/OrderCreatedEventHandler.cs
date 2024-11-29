@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Order.Application.Orders.Commands.CreateOrder;
+namespace Order.Application.OrdersCQRS.EventHandlers.Domain;
 
-public class CreateOrderHandler
+public class OrderCreatedEventHandler
 {
 }
