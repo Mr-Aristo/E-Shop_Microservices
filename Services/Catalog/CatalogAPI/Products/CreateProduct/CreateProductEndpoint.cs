@@ -1,6 +1,4 @@
-﻿
-
-namespace CatalogAPI.Products.CreateProduct;
+﻿namespace CatalogAPI.Products.CreateProduct;
 
 
 public record CreateProductRequest(Guid Id,string Name,List<string> Category,string Description,string ImageFile,decimal Price);
@@ -16,10 +14,10 @@ public class CreateProductEndpoint : ICarterModule
             async (CreateProductRequest request, ISender sender) =>//ISender from mediator to send command
         {
             //mapster for mapping and to other class. //CreateProductCommand From handler
-            var command = request.Adapt<CreateProductCommand>();
+            var command = request.Adapt<CreateProductCommand>();// Adaptation of handler command
 
             var result = await sender.Send(command);
-            var response = result.Adapt<CreateProductResponse>();
+            var response = result.Adapt<CreateProductResponse>();// Adabtation of handler response
 
             return Results.Created($"/products/{response.Id}", response);
         })
