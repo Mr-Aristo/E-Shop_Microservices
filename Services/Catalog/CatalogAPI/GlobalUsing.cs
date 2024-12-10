@@ -12,6 +12,3 @@ global using BuildingBlock.Behaviors;
 global using Catalog.API.Data;
 global using BuildingBlocks.Exceptions.Handler;
 global using HealthChecks.UI.Client;
-global using BuildingBlock.Behaviors;
-global using BuildingBlocks.Behaviors;
-global using FluentValidation;
