@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Design;
+﻿using Microsoft.EntityFrameworkCore.Design;
 
 namespace Order.Infrastructure
 {
@@ -26,10 +21,10 @@ namespace Order.Infrastructure
 
             return new ApplicationDbContext(optionsBuilder.Options);
 
-
         }
     }
 }
-/*Bu sinifin amaci migrasyon yapilirken .netcore program.cs icindeki injeksiyonu kullanamiyor ve DI tam olarak calismiyor. 
+/*
+ Bu sinifin amaci migrasyon yapilirken .netcore program.cs icindeki injeksiyonu kullanamiyor ve DI tam olarak calismiyor. 
  bu yapi sayesinde .net core tam olarak hangi contexti calistiracagini biliyor.
- */
+*/
