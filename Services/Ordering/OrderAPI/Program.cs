@@ -1,5 +1,6 @@
 using Order.Application;
 using Order.Infrastructure;
+using Order.Infrastructure.Data.Extentions;
 using OrderAPI; 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +16,7 @@ app.UseApiServices();
 
 if (app.Environment.IsDevelopment())
 {
-//    await app.InitialiseDatabaseAsync();
+    await app.InitialiseDatabaseAsync(); // This is for auto migration (update-database)
 }
 
 
