@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder;
 using Ordering.Infrastructure.Data.Extensions;
 
 namespace Order.Infrastructure.Data.Extentions;
@@ -16,11 +16,12 @@ public static class DatabaseExtentions
         using var scope = app.Services.CreateScope();
 
         var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-
+      
         context.Database.MigrateAsync().GetAwaiter().GetResult(); // this will wait till migration operation complete.
 
         await SeedAsync(context);
-    }
+      
+       }
 
     private static async Task SeedAsync(ApplicationDbContext context)
     {
