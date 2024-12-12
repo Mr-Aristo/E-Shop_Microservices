@@ -6,3 +6,5 @@ global using Microsoft.Extensions.Configuration;
 global using Microsoft.Extensions.DependencyInjection;
 global using Order.Infrastructure.Data;
 global using Order.Domain.Enums;
+global using Microsoft.AspNetCore.Builder;
+global using Ordering.Infrastructure.Data.Extensions;

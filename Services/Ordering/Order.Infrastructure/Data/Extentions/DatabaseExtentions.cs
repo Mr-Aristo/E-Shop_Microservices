@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Ordering.Infrastructure.Data.Extensions;
-
-namespace Order.Infrastructure.Data.Extentions;
+﻿namespace Order.Infrastructure.Data.Extentions;
 
 public static class DatabaseExtentions
 {
