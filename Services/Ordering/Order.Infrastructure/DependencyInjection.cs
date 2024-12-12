@@ -1,5 +1,4 @@
-﻿
-namespace Order.Infrastructure;
+﻿namespace Order.Infrastructure;
 
 public static class DependencyInjection
 {
@@ -17,7 +16,6 @@ public static class DependencyInjection
         });
 
        // services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
-
 
         return services;
     }
