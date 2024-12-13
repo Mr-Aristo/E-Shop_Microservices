@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace BuildingBlock.Exceptions;
+﻿namespace BuildingBlock.Exceptions;
 
 public class BadRequestException : Exception
 {
