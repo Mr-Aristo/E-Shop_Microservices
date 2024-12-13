@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Order.Application.Orders.Queries.GetOrders;
+﻿namespace Order.Application.Orders.Queries.GetOrders;
 
 public class GetOrderQuery
 {

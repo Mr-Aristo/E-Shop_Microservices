@@ -1,6 +1,4 @@
-﻿
-
-namespace Order.Domain.ValueObjects;
+﻿namespace Order.Domain.ValueObjects;
 
 public record Payment
 {
